@@ -35,7 +35,7 @@ public class PasswordDialog extends AlertDialog implements View.OnClickListener 
         setContentView(R.layout.dialog_layout);
         mEtPasswd = (EditText) findViewById(R.id.et_passwd);
 
-        enteredPassword = (TextView) findViewById(R.id.password);
+        enteredPassword = (TextView) findViewById(R.id.edtPassword);
 
         //Ensure that EditText can pop up the keyboard
         this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
@@ -59,7 +59,7 @@ public class PasswordDialog extends AlertDialog implements View.OnClickListener 
                     Toast.makeText(mContext, "Password cannot be empty", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(mContext, mEtPasswd.getText().toString(), Toast.LENGTH_SHORT).show();
-                    //enteredPassword.setText(mEtPasswd.getText().toString());
+                    enteredPassword.setText(mEtPasswd.getText().toString());
                     this.dismiss();
 
                 }
